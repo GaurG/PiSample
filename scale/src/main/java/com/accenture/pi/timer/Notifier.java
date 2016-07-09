@@ -3,34 +3,43 @@ package com.accenture.pi.timer;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.accenture.pi.MailNotifier;
+
 import static com.accenture.pi.timer.Status.EMPTY;
 
 public class Notifier {
 	private Timer timer;
-	int seconds = 15 * 1000; // millis
+	int seconds = 5 * 1000; // millis
 	private Status status;
+	public static boolean fireEmail = true;
 
-	/*public Notifier() {
+	public void startTimer() {
 		timer = new Timer();
-		timer.schedule(new Reminder(), seconds);
-	}*/
-
-	public Notifier(Status status) {
-		timer = new Timer();
-		this.status = status;
 		timer.schedule(new Reminder(), seconds);
 	}
 
 	class Reminder extends TimerTask {
 		public void run() {
-			if (EMPTY.equals(status.getStatus())) {
+			if (shouldFireEmail()) {
 				System.out.println("Fire an email");
+				fireEmail = false;
+				MailNotifier.mail(status.getStatus(), status.getWeight());
+			} else {
+				System.out.println("Not gonna fire an email now");
 			}
 
 			timer.cancel();
 		}
 	}
 
-	// public static void main(String args[]) { new Notifier(); }
+	private boolean shouldFireEmail() {
+		return ((EMPTY.equals(status.getStatus()) || 
+				(status.getWeight() > 0.0 && status.getWeight() < 200)) &&
+				fireEmail);
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
+	}
 
 }

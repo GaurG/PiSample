@@ -112,6 +112,7 @@ public class UsbScaleTest implements UsbPipeListener {
 		boolean grams = data[2] == 2;
 		int scalingFactor = data[3];
 		int weight = (data[4] & 0xFF) + (data[5] << 8);
+		double wt = 0.0;
 		
 		String updatedStatus;
 		
@@ -122,16 +123,19 @@ public class UsbScaleTest implements UsbPipeListener {
 		} else if (negative) {
 			updatedStatus = NEGATIVE;
 		} else {
-			double wt = scaleWeight(weight, scalingFactor);
-			updatedStatus = String.format("Weight = %,.1f%s", wt, grams ? "g" : "oz");
+			wt = scaleWeight(weight, scalingFactor);
+			updatedStatus = String.format("Weight = %,.1f%s", wt, grams ? " g" : " oz");
 		}
 		
 		if(updatedStatus.equals(status.getStatus())) {
 			return;
 		} 
 		
-		status.setStatus(updatedStatus);
 		System.out.println(updatedStatus);
+		
+		/*status.setWeight(wt);
+		status.setStatus(updatedStatus);
+		System.out.println(updatedStatus);*/
 	}
 
 	private double scaleWeight(int weight, int scalingFactor) {

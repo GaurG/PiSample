@@ -63,7 +63,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.nighthacking.UsbScaleTest</mainClass>
+							<mainClass>com.accenture.pi.UsbScaleTest</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

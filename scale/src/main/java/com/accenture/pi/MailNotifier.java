@@ -10,11 +10,14 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import com.accenture.pi.timer.Notifier;
+
 import java.util.Date;
 
 public class MailNotifier {
 
-	public static void main(String[] args) {
+	public static void mail(String status, double weight) {
 		final String username = "tt5587438@gmail.com";
 		final String password = "bWFpbC5zbXRwLmF1dGg=";
 
@@ -38,8 +41,8 @@ public class MailNotifier {
 			message.setFrom(new InternetAddress("tt5587438@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("tt5587438@gmail.com"));
 			Date date = new Date(System.currentTimeMillis());
-			message.setSubject("Testing Subject " + date.toString());
-			message.setText("Dear Mail Crawler," + "\n\n This is  new mail! ");
+			message.setSubject("Grocery Status on " + date.toString());
+			message.setText("Hello," + "\n\n Your Milk Status " + status + "\n\nPlease consider buying milk.");
 
 			Transport.send(message);
 			System.out.println("Done");
