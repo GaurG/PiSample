@@ -17,6 +17,11 @@ import javax.usb.event.UsbPipeDataEvent;
 import javax.usb.event.UsbPipeErrorEvent;
 import javax.usb.event.UsbPipeListener;
 
+import com.accenture.pi.timer.Status;
+import static com.accenture.pi.timer.Status.EMPTY;
+import static com.accenture.pi.timer.Status.OVERWEIGHT;
+import static com.accenture.pi.timer.Status.NEGATIVE;
+
 /**
  * Self-contained implementation that connects to a USB scale and outputs the
  * data returned to the command line.
@@ -111,13 +116,14 @@ public class UsbScaleTest implements UsbPipeListener {
 		String updatedStatus;
 		
 		if (empty) {
-			updatedStatus = "EMPTY";
+			updatedStatus = EMPTY;
 		} else if (overweight) {
-			updatedStatus = "OVERWEIGHT";
+			updatedStatus = OVERWEIGHT;
 		} else if (negative) {
-			updatedStatus = "NEGATIVE";
+			updatedStatus = NEGATIVE;
 		} else {
-			updatedStatus = String.format("Weight = %,.1f%s", scaleWeight(weight, scalingFactor), grams ? "g" : "oz");
+			double wt = scaleWeight(weight, scalingFactor);
+			updatedStatus = String.format("Weight = %,.1f%s", wt, grams ? "g" : "oz");
 		}
 		
 		if(updatedStatus.equals(status.getStatus())) {
@@ -126,16 +132,6 @@ public class UsbScaleTest implements UsbPipeListener {
 		
 		status.setStatus(updatedStatus);
 		System.out.println(updatedStatus);
-		
-		/*if (empty) {
-			System.out.println("EMPTY");
-		} else if (overweight) {
-			System.out.println("OVERWEIGHT");
-		} else if (negative) {
-			System.out.println("NEGATIVE");
-		} else { HI 
-			System.out.println(String.format("Weight = %,.1f%s", scaleWeight(weight, scalingFactor), grams ? "g" : "oz"));
-		}*/
 	}
 
 	private double scaleWeight(int weight, int scalingFactor) {
@@ -147,17 +143,4 @@ public class UsbScaleTest implements UsbPipeListener {
 		Logger.getLogger(UsbScaleTest.class.getName()).log(Level.SEVERE, "Scale Error", upee);
 	}
 	
-}
-
-class Status {
-	
-	private String status = "no status";
-	
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 }
