@@ -49,7 +49,7 @@ public class PourOverCoffee implements Recipe {
       Step.countdown(30),
       Step.say("Pour an additional " + extraWater),
       Step.waitForAtLeast(extraWater),
-      Step.countdown(60),
+      Step.countdown(30),
       Step.say("Done!  Take your coffee off the scale."),
       Step.waitForClear(),
       Step.say("Enjoy your Java brew!")

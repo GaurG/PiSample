@@ -44,7 +44,7 @@ public class CleverCoffeeDripper implements Recipe {
       Step.tare(),
       Step.say("Coloque " + water + " a 97oC"),
       Step.waitForAtLeast(water),
-      Step.countdown(60),
+      Step.countdown(30),
       Step.say("Pronto!  Coloque o coador de cafe em cima da caneca."),
       Step.waitForClear(),
       Step.say("Experimente o seu Java cafe agora!")

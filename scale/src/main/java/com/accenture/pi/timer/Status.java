@@ -1,7 +1,5 @@
 package com.accenture.pi.timer;
 
-import com.accenture.pi.MailNotifier;
-
 public class Status {
 
 	private String status = "no status";
@@ -11,6 +9,7 @@ public class Status {
 	public static final String EMPTY = "EMPTY";
 	public static final String OVERWEIGHT = "OVERWEIGHT";
 	public static final String NEGATIVE = "NEGATIVE";
+	public static final int WEIGHlIMITS = 300;
 
 	public String getStatus() {
 		return status;
@@ -18,10 +17,10 @@ public class Status {
 
 	// TODO: Consider oz as well. currently mail fired based on gm weight
 	public void setStatus(String status) {
-		if(EMPTY.equals(status) || (weight > 0.0 && weight < 200)) {
+		if(EMPTY.equals(status) || (weight > 0.0 && weight < WEIGHlIMITS)) {
 			notify.setStatus(this);
 			notify.startTimer();
-		} else if (weight > 200) {
+		} else if (weight > WEIGHlIMITS) {
 			Notifier.fireEmail = true;
 		}
 		

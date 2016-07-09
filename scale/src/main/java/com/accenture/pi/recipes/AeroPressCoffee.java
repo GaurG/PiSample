@@ -46,7 +46,7 @@ public class AeroPressCoffee implements Recipe {
       Step.say("Pour " + brewingWater + " at 200F"),
       Step.waitFor(brewingWater),
       Step.say("Brewing time!  Stir for 10 seconds and wait for countdown to finish."),
-      Step.countdown(60),
+      Step.countdown(30),
       Step.say("Done!  Take the AeroPress off the scale before proceeding."),
       Step.waitForClear(),
       Step.say("Now press it down firmly until all the liquid is extracted.\n"
