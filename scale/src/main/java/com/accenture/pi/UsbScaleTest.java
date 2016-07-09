@@ -131,11 +131,9 @@ public class UsbScaleTest implements UsbPipeListener {
 			return;
 		} 
 		
-		System.out.println(updatedStatus);
-		
-		/*status.setWeight(wt);
+		status.setWeight(wt);
 		status.setStatus(updatedStatus);
-		System.out.println(updatedStatus);*/
+		System.out.println(updatedStatus);
 	}
 
 	private double scaleWeight(int weight, int scalingFactor) {

@@ -9,7 +9,7 @@ import static com.accenture.pi.timer.Status.EMPTY;
 
 public class Notifier {
 	private Timer timer;
-	int seconds = 5 * 1000; // millis
+	int seconds = 15 * 1000; // millis
 	private Status status;
 	public static boolean fireEmail = true;
 
