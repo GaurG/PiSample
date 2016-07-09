@@ -1,7 +1,7 @@
-package com.accenture.pi.recipe;
+package com.iot.pi.recipe;
 
-import com.accenture.pi.recipe.interfaces.RecipeEnvironment;
-import com.accenture.pi.scales.interfaces.Scale;
+import com.iot.pi.recipe.interfaces.RecipeEnvironment;
+import com.iot.pi.scales.interfaces.Scale;
 
 public class Step {
 

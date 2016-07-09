@@ -1,4 +1,4 @@
-package com.accenture.pi.scales;
+package com.iot.pi.scales;
 
 import java.util.List;
 import java.util.concurrent.Phaser;
@@ -20,7 +20,7 @@ import javax.usb.event.UsbPipeDataEvent;
 import javax.usb.event.UsbPipeErrorEvent;
 import javax.usb.event.UsbPipeListener;
 
-import com.accenture.pi.scales.interfaces.Scale;
+import com.iot.pi.scales.interfaces.Scale;
 
 public class UsbScale implements Scale, UsbPipeListener {
 

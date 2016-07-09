@@ -1,9 +1,9 @@
-package com.accenture.pi.recipe;
+package com.iot.pi.recipe;
 
-import com.accenture.pi.recipe.interfaces.Recipe;
-import com.accenture.pi.recipe.interfaces.RecipeEnvironment;
-import com.accenture.pi.scales.interfaces.Scale;
-import com.accenture.pi.scales.UsbScale;
+import com.iot.pi.recipe.interfaces.Recipe;
+import com.iot.pi.recipe.interfaces.RecipeEnvironment;
+import com.iot.pi.scales.interfaces.Scale;
+import com.iot.pi.scales.UsbScale;
 
 public abstract class RecipeRunner implements RecipeEnvironment {
 

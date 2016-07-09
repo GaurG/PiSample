@@ -1,4 +1,4 @@
-package com.accenture.pi;
+package com.iot.pi;
 
 import java.util.List;
 import java.util.logging.Level;
@@ -17,10 +17,10 @@ import javax.usb.event.UsbPipeDataEvent;
 import javax.usb.event.UsbPipeErrorEvent;
 import javax.usb.event.UsbPipeListener;
 
-import com.accenture.pi.timer.Status;
-import static com.accenture.pi.timer.Status.EMPTY;
-import static com.accenture.pi.timer.Status.OVERWEIGHT;
-import static com.accenture.pi.timer.Status.NEGATIVE;
+import com.iot.pi.timer.Status;
+import static com.iot.pi.timer.Status.EMPTY;
+import static com.iot.pi.timer.Status.OVERWEIGHT;
+import static com.iot.pi.timer.Status.NEGATIVE;
 
 /**
  * Self-contained implementation that connects to a USB scale and outputs the
@@ -113,9 +113,9 @@ public class UsbScaleTest implements UsbPipeListener {
 		int scalingFactor = data[3];
 		int weight = (data[4] & 0xFF) + (data[5] << 8);
 		double wt = 0.0;
-		
+
 		String updatedStatus;
-		
+
 		if (empty) {
 			updatedStatus = EMPTY;
 		} else if (overweight) {
@@ -126,11 +126,11 @@ public class UsbScaleTest implements UsbPipeListener {
 			wt = scaleWeight(weight, scalingFactor);
 			updatedStatus = String.format("Weight = %,.1f%s", wt, grams ? " g" : " oz");
 		}
-		
+
 		if(updatedStatus.equals(status.getStatus())) {
 			return;
-		} 
-		
+		}
+
 		status.setWeight(wt);
 		status.setStatus(updatedStatus);
 		System.out.println(updatedStatus);
@@ -144,5 +144,5 @@ public class UsbScaleTest implements UsbPipeListener {
 	public void errorEventOccurred(UsbPipeErrorEvent upee) {
 		Logger.getLogger(UsbScaleTest.class.getName()).log(Level.SEVERE, "Scale Error", upee);
 	}
-	
+
 }

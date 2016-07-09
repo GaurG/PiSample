@@ -1,4 +1,4 @@
-package com.accenture.pi;
+package com.iot.pi;
 
 import java.util.Base64;
 import java.util.Properties;
@@ -11,7 +11,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.accenture.pi.timer.Notifier;
+import com.iot.pi.timer.Notifier;
 
 import java.util.Date;
 
@@ -29,7 +29,7 @@ public class MailNotifier {
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.port", "587");
-		
+
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication(username, new String(valueDecoded));

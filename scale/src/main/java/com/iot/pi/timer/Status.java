@@ -1,11 +1,11 @@
-package com.accenture.pi.timer;
+package com.iot.pi.timer;
 
 public class Status {
 
 	private String status = "no status";
 	private double weight = 0.0;
-	private static final Notifier notify = new Notifier(); 
-	
+	private static final Notifier notify = new Notifier();
+
 	public static final String EMPTY = "EMPTY";
 	public static final String OVERWEIGHT = "OVERWEIGHT";
 	public static final String NEGATIVE = "NEGATIVE";
@@ -23,7 +23,7 @@ public class Status {
 		} else if (weight > WEIGHlIMITS) {
 			Notifier.fireEmail = true;
 		}
-		
+
 		this.status = status;
 	}
 

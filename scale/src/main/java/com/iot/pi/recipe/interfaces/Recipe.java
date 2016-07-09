@@ -1,13 +1,13 @@
-package com.accenture.pi.recipe.interfaces;
+package com.iot.pi.recipe.interfaces;
 
-import com.accenture.pi.recipe.Ingredient;
-import com.accenture.pi.recipe.Step;
+import com.iot.pi.recipe.Ingredient;
+import com.iot.pi.recipe.Step;
 
 public interface Recipe {
 
   /**
-   * 
-   * 
+   *
+   *
    * @return
    */
   String name();

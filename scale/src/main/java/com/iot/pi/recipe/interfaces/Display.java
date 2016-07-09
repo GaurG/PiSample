@@ -1,4 +1,4 @@
-package com.accenture.pi.recipe.interfaces;
+package com.iot.pi.recipe.interfaces;
 
 public interface Display {
 

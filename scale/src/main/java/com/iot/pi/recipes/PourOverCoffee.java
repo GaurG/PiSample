@@ -1,8 +1,8 @@
-package com.accenture.pi.recipes;
+package com.iot.pi.recipes;
 
-import com.accenture.pi.recipe.Step;
-import com.accenture.pi.recipe.Ingredient;
-import com.accenture.pi.recipe.interfaces.Recipe;
+import com.iot.pi.recipe.Step;
+import com.iot.pi.recipe.Ingredient;
+import com.iot.pi.recipe.interfaces.Recipe;
 
 public class PourOverCoffee implements Recipe {
 
@@ -22,7 +22,7 @@ public class PourOverCoffee implements Recipe {
   public String name() {
     return "Pour Over Coffee";
   }
-  
+
   @Override
   public String description() {
     return "Precisely brews 1 cup of coffee using a pour over method and a scale.";

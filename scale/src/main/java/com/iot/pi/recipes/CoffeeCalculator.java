@@ -1,4 +1,4 @@
-package com.accenture.pi.recipes;
+package com.iot.pi.recipes;
 
 public class CoffeeCalculator {
 

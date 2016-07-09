@@ -1,8 +1,8 @@
-package com.accenture.pi;
+package com.iot.pi;
 
-import com.accenture.pi.recipes.AeroPressCoffee;
-import com.accenture.pi.recipe.CommandLineRecipeRunner;
-import com.accenture.pi.recipes.CoffeeCalculator;
+import com.iot.pi.recipes.AeroPressCoffee;
+import com.iot.pi.recipe.CommandLineRecipeRunner;
+import com.iot.pi.recipes.CoffeeCalculator;
 
 public class JavaScale {
 

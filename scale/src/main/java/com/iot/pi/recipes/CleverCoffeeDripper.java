@@ -1,8 +1,8 @@
-package com.accenture.pi.recipes;
+package com.iot.pi.recipes;
 
-import com.accenture.pi.recipe.Step;
-import com.accenture.pi.recipe.Ingredient;
-import com.accenture.pi.recipe.interfaces.Recipe;
+import com.iot.pi.recipe.Step;
+import com.iot.pi.recipe.Ingredient;
+import com.iot.pi.recipe.interfaces.Recipe;
 
 public class CleverCoffeeDripper implements Recipe {
 
@@ -19,7 +19,7 @@ public class CleverCoffeeDripper implements Recipe {
   public String name() {
     return "Clever Coffee Dripper";
   }
-  
+
   @Override
   public String description() {
     return "Preparacao precisa de uma caneca de cafe usando "

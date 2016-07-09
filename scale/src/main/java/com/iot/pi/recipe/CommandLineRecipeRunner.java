@@ -1,8 +1,8 @@
-package com.accenture.pi.recipe;
+package com.iot.pi.recipe;
 
 import java.util.concurrent.TimeUnit;
 
-import com.accenture.pi.recipe.interfaces.Display;
+import com.iot.pi.recipe.interfaces.Display;
 
 public class CommandLineRecipeRunner extends RecipeRunner {
 

@@ -1,6 +1,6 @@
-package com.accenture.pi.recipe;
+package com.iot.pi.recipe;
 
-import com.accenture.pi.recipe.interfaces.Display;
+import com.iot.pi.recipe.interfaces.Display;
 
 public class GuiRecipeRunner extends RecipeRunner {
 

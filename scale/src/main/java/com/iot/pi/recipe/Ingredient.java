@@ -1,4 +1,4 @@
-package com.accenture.pi.recipe;
+package com.iot.pi.recipe;
 
 public class Ingredient {
 

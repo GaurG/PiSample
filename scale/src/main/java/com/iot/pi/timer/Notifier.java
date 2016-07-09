@@ -1,12 +1,12 @@
-package com.accenture.pi.timer;
+package com.iot.pi.timer;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.accenture.pi.MailNotifier;
+import com.iot.pi.MailNotifier;
 
-import static com.accenture.pi.timer.Status.EMPTY;
-import static com.accenture.pi.timer.Status.WEIGHlIMITS;
+import static com.iot.pi.timer.Status.EMPTY;
+import static com.iot.pi.timer.Status.WEIGHlIMITS;
 
 public class Notifier {
 	private Timer timer;
@@ -34,7 +34,7 @@ public class Notifier {
 	}
 
 	private boolean shouldFireEmail() {
-		return ((EMPTY.equals(status.getStatus()) || 
+		return ((EMPTY.equals(status.getStatus()) ||
 				(status.getWeight() > 0.0 && status.getWeight() < WEIGHlIMITS)) &&
 				fireEmail);
 	}

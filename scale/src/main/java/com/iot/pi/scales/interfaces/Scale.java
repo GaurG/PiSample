@@ -1,4 +1,4 @@
-package com.accenture.pi.scales.interfaces;
+package com.iot.pi.scales.interfaces;
 
 import java.util.function.DoublePredicate;
 
