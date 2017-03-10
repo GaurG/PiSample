@@ -63,7 +63,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>com.accenture.pi.UsbScaleTest</mainClass>
+							<mainClass>com.iot.pi.UsbScaleTest</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
